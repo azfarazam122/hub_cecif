@@ -1,0 +1,80 @@
+aside {
+    color: #dddddd;
+    width: 280px;
+    height: 107vh;
+    background-image: linear-gradient(30deg , #141539, #141539);
+    border-bottom-right-radius: 18px;
+    border-top-right-radius: 18px;
+    /* border-top-right-radius: 80px;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-bottom-left-radius: 80px; */
+  }
+
+
+  @media screen and (max-width: 768px) {
+    #mainDivOfSidebar{
+        display: none;
+    }
+    aside {
+      width: 45px;
+    }
+  }
+
+  aside a {
+    color: #dddddd;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  aside a:hover {
+    color: #fff;
+    background: #e84741;
+    outline: none;
+    position: relative;
+    background-color: #e84741;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  aside a i {
+    margin-right: 5px;
+    width: 20px;
+  }
+  aside a span {
+    color: #dddddd;
+    text-decoration: underline;
+  }
+
+
+  aside a:hover::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 100%;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 0 20px 0 0 #e84741;
+  }
+
+  aside a:hover::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 38px;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -20px 0 0 #e84741;
+  }
+
+  aside p {
+    padding: 10px 0;
+  }
+
+

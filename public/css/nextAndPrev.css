@@ -1,0 +1,65 @@
+#topPageView {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#topPageView > div {
+    background-color: #e4e4e6;
+    border-radius: 8px;
+    margin: 10px;
+    height: 60px;
+    font-size: 1.25rem;
+    padding: 15px;
+    text-align: center;
+    background: #e84741;
+}
+.specificLabelFields{
+    font-size: 1.25rem;
+    font-weight: normal;;
+    color: #141539;
+}
+
+.specificInputFields{
+    border: 1px solid #e84741;
+}
+
+
+/* Circle Chart  */
+@keyframes growProgressBar {
+    0%, 33% { --pgPercentage: 0; }
+    100% { --pgPercentage: var(--value); }
+  }
+
+  @property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+
+  div[role="progressbar"] {
+    --size: 8rem;
+    --fg: #3db0f3;
+    --bg: #def;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+      conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+      ;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--fg);
+  }
+
+  div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+  }
+
